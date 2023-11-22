@@ -4,11 +4,14 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 import CounterApp from "./components/CounterApp.jsx"; 
+import TailwindProps from "./components/TailwindPropsApp.jsx"
 
 function App() {
     return (
         <>
-            <CounterApp />
+            {/* <CounterApp /> */}
+            <TailwindProps />
+
         </>
     );
 }
