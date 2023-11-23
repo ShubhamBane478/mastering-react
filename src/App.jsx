@@ -6,11 +6,15 @@ import './App.css'
 import CounterApp from "./components/CounterApp.jsx"; 
 import TailwindProps from "./components/TailwindPropsApp.jsx"
 
+import BgChanger from "./mini_projects/BgChanger.jsx" 
+
+
 function App() {
     return (
         <>
             {/* <CounterApp /> */}
-            <TailwindProps />
+            {/* <TailwindProps /> */}
+            <BgChanger/>
 
         </>
     );
