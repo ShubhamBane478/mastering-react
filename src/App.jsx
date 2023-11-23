@@ -7,6 +7,9 @@ import CounterApp from "./components/CounterApp.jsx";
 import TailwindProps from "./components/TailwindPropsApp.jsx"
 
 import BgChanger from "./mini_projects/BgChanger.jsx" 
+import PassGenratorApp from './mini_projects/PassGenratorApp.jsx'
+
+
 
 
 function App() {
@@ -14,7 +17,11 @@ function App() {
         <>
             {/* <CounterApp /> */}
             {/* <TailwindProps /> */}
-            <BgChanger/>
+            
+            {/* <BgChanger/> */}
+            <PassGenratorApp/>
+
+
 
         </>
     );
