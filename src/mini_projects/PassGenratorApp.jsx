@@ -1,4 +1,4 @@
-import {useState , useCallback} from 'react'
+import {useState , useCallback ,useEffect} from 'react'
 
 function PassGenratorApp(){
 
@@ -16,9 +16,9 @@ function PassGenratorApp(){
         if( numberAllowed) str+= "01234565789"
         if( numberAllowed) str+= "!@#$%^&*-_+=[]{}~`"
 
-        for(let i = 1 ; i<= Array.length ; i++){
+        for(let i = 1 ; i<= length ; i++){
             let char = Math.floor(Math.random() * str.length + 1)
-            pass = str.charAt(char)
+            pass += str.charAt(char)
         }
 
         setPassword(pass)
@@ -26,6 +26,12 @@ function PassGenratorApp(){
 
     }, [length, numberAllowed , characterAllowed, setPassword])
 
+
+
+    // passwordGenerator() //cannot use in this way 
+
+    useEffect(()=> {
+    passwordGenerator() }, [length,numberAllowed,characterAllowed,passwordGenerator])
 
     return(
         <>
@@ -51,9 +57,33 @@ function PassGenratorApp(){
                             value={length}
                             className='cursor-pointer' 
                             onChange={(e) => {setLength(e.target.value)}}/>
+                             <label>Length: {length}</label>
 
                         </div>
-                    </div>
+
+                        <div className="flex items-center gap-x-1">
+                            <input
+                                type="checkbox"
+                                defaultChecked={numberAllowed}
+                                id="numberInput"
+                                onChange={() => {
+                                    setNumberAllowed((prev) => !prev);
+                                }}
+                            />
+                            <label htmlFor="numberInput">Numbers</label>
+                        </div>
+                        <div className="flex items-center gap-x-1">
+                            <input
+                                type="checkbox"
+                                defaultChecked={characterAllowed}
+                                id="characterInput"
+                                onChange={() => {
+                                    setCharacterAllowed((prev) => !prev )
+                                }}
+                            />
+                            <label htmlFor="characterInput">Characters</label>
+                        </div>
+                 </div>
                         
             </div>
         </div>
