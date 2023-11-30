@@ -1,4 +1,4 @@
-import {useState , useCallback ,useEffect} from 'react'
+import {useState , useCallback ,useEffect ,useRef} from 'react'
 
 function PassGenratorApp(){
 
@@ -7,6 +7,11 @@ function PassGenratorApp(){
     const [characterAllowed , setCharacterAllowed] =  useState("")
     const [password , setPassword] = useState()
 
+
+    //use ref hook
+
+    //take the reference of element and allow to manipulation
+    const passwordRef = useRef(null)
     
 
     const passwordGenerator = useCallback(()=> {
@@ -30,8 +35,19 @@ function PassGenratorApp(){
 
     // passwordGenerator() //cannot use in this way 
 
+    //useEffect run on first reload and render again  if any of the dependancies have changes
     useEffect(()=> {
     passwordGenerator() }, [length,numberAllowed,characterAllowed,passwordGenerator])
+
+    const copyPasswordOnClipboard =  useCallback(()=>{
+        /* here the passwordRef is variable and 
+        '.cuurent' is method perform on the current value 
+        '.select()' is use to hight that current value*/
+        passwordRef.current?.select();
+        passwordRef.current?.selectSelectionRange(0,10) ;
+         //this is server side so we can use it but if it was build in the NEXT.js (server side ) than it dosen't exit
+         window.navigator.clipboard.writeText(password) //allow user to copy value in the clipboard
+    },[password])
 
     return(
         <>
@@ -45,8 +61,9 @@ function PassGenratorApp(){
                             className='outline-none w-full py-1 px-3'
                             placeholder='Password'
                             readOnly
+                            ref={passwordRef}
                             />
-                        <button className='outline-none bg-blue-700 text-white px-3 py-0.5 shrink-0'>copy</button>
+                        <button onClick= {copyPasswordOnClipboard} className='outline-none bg-blue-700 text-white px-3 py-0.5 shrink-0'>copy</button>
                     </div>
                     <div className='flex text-sm gap-x-2'>
                         <div className='flex items-center gap-x-1'>
