@@ -1,5 +1,7 @@
 import React from 'react';
 import {Link , NavLink} from 'react-router-dom';
+
+
 export default function Footer() {
     return (
         <footer className="bg-white border-y">
@@ -70,9 +72,9 @@ export default function Footer() {
                 <hr className="my-6 border-gray-200 sm:mx-auto lg:my-8" />
                 <div className="sm:flex sm:items-center sm:justify-between">
                     <span className="text-sm text-gray-500 sm:text-center">
-                        © 2023
-                        <a href="https://hiteshchoudhary.com/" className="hover:underline">
-                            ShubhamBane
+                        © 2024
+                        <a href="https://www.instagram.com/shubham_478_/" className="hover:underline">
+                             ShubhmaBane478
                         </a>
                         . All Rights Reserved.
                     </span>
