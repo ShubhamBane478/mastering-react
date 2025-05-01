@@ -1,8 +1,9 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
+    "./react-interview-questions/**/*.{js,ts,jsx,tsx}"  // Add this line
   ],
   theme: {
     extend: {},
