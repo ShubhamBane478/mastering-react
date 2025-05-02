@@ -6,9 +6,9 @@ const ivQuestionData = [ {
 },
 {
     id: 2 , 
-    title : "File Explorer",
-    description : "Add folder and add files in it",
-    projectName : "file-manager",
+    title : "Pagination ",
+    description : "To display huge in chunks",
+    projectName : "pagination",
 }]
 
 export default ivQuestionData;

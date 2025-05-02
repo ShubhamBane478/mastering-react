@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import ivQuestionData from "./interviewProject";
 
 export function InterviewProjectCard() {
@@ -23,7 +24,7 @@ export function InterviewProjectCard() {
               {cardData.description}
             </p>
             <Link
-              to={`/react-interview-questions/${project.projectName}`}
+              to={`/react-interview-questions/${ivQuestionData.projectName}`}
               className="inline-block px-4 py-2 mt-2 font-semibold text-white bg-blue-600 rounded hover:bg-blue-700"
             >
               View Project
