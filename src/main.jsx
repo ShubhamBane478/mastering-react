@@ -4,9 +4,12 @@ import App from './App.jsx'
 import './index.css'
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import ivQuestionData from '../react-interview-questions/interviewProject.js'
 import { ProjectDetail } from '../react-interview-questions/ProjectDetail.jsx'
-import ReactInterView from '../react-interview-questions/reactInterviwe.jsx'
 import NotFoundPage from './components/notFoundPage.jsx'
+import { ProjectCard } from './components/ProjectCard.jsx'
+import miniProjectData from './mini_projects/miniProjectData.js'
+// import { MinProjectDetail } from './mini_projects/MinProjectDetail.jsx'
 
 const router = createBrowserRouter([
   {
@@ -15,14 +18,22 @@ const router = createBrowserRouter([
   },
   {
     path: '/react-interview-questions',
-    element: <ReactInterView />,
+    element:  <ProjectCard projectData = {ivQuestionData}/>,
   },{
     path: "*",
     element: <NotFoundPage/>
   },
   {
     path: "/react-interview-questions/:projectName",
-    element: <ProjectDetail />,
+    element: <ProjectDetail  projectData={ivQuestionData}/>,
+  },
+  {
+    path: "/mini-project/",
+    element: <ProjectCard projectData = {miniProjectData}/>
+  },
+  {
+    path: "/mini-project/:projectName",
+    element: <ProjectDetail projectData={miniProjectData}/>,
   }
   
 

@@ -1,23 +1,16 @@
+/* eslint-disable react/prop-types */
 import { useParams } from "react-router-dom";
-import FileManager from "./file-maneger/fileManager";
-import PaginationIQ from "./pagination/Pagination";
 
-// Import all project components
 
-// Map projectName to component
-const componentMap = {
-  "file-manager": FileManager,
-  "pagination": PaginationIQ,
-//   "project-two": ProjectTwo,
-};
+export function ProjectDetail({projectData}) {
 
-export function ProjectDetail() {
   const { projectName } = useParams();
-  const ProjectComponent = componentMap[projectName];
-  console.log(projectName);
-  console.log(ProjectComponent);
 
-  if (!ProjectComponent) {
+  const project = projectData.find(p => p.projectName === projectName);
+
+  const ProjectComponent = project.projectComponent;
+
+  if (!project) {
     return (
         <>
         

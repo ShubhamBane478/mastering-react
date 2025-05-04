@@ -1,11 +1,18 @@
-import { Link } from "react-router-dom";
-import ivQuestionData from "./interviewProject";
+/* eslint-disable react/prop-types */
+import { Link, useLocation } from "react-router-dom";
 
-export function InterviewProjectCard() {
+
+export function ProjectCard({projectData}) {
+  const location = useLocation();
+  const projectTypeUrl = location.pathname.replace(/\/$/, "");
+
+
+    
+ 
   return (
     <>
 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {ivQuestionData.map((cardData) => (
+      {projectData.map((cardData) => (
         <>
        
         <div
@@ -25,7 +32,7 @@ export function InterviewProjectCard() {
               {cardData.description}
             </p>
             <Link
-              to={`/react-interview-questions/${cardData.projectName}`}
+              to={`${projectTypeUrl}/${cardData.projectName}`}
               className="inline-block px-4 py-2 mt-2 font-semibold text-white bg-blue-600 rounded hover:bg-blue-700"
             >
               View Project
