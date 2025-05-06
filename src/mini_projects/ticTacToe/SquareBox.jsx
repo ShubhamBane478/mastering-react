@@ -1,6 +1,6 @@
 
 
-const Square = ({value, onSquareClick}) => {
+const SquareBox = ({value, onSquareClick}) => {
 
 
   return (
@@ -9,4 +9,4 @@ const Square = ({value, onSquareClick}) => {
   )
 }
 
-export default Square
+export default SquareBox;
