@@ -4,6 +4,7 @@ import App from './App.jsx'
 import './index.css'
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import ecosystemData from '../react-ecosystem/ecosystemData.js'
 import ivQuestionData from '../react-interview-questions/interviewProject.js'
 import { ProjectDetail } from '../react-interview-questions/ProjectDetail.jsx'
 import NotFoundPage from './components/notFoundPage.jsx'
@@ -34,6 +35,15 @@ const router = createBrowserRouter([
   {
     path: "/mini-project/:projectName",
     element: <ProjectDetail projectData={miniProjectData}/>,
+  },
+  //React Ecosystem
+  {
+    path: "/react-ecosystem/",
+    element: <ProjectCard projectData={ecosystemData}/>,
+  },
+  {
+    path: "/react-ecosystem/:projectName",
+    element: <ProjectDetail projectData={ecosystemData}/>,
   }
   
 
