@@ -4,12 +4,12 @@ import App from './App.jsx'
 import './index.css'
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import ecosystemData from '../react-ecosystem/ecosystemData.js'
-import ivQuestionData from '../react-interview-questions/interviewProject.js'
-import { ProjectDetail } from '../react-interview-questions/ProjectDetail.jsx'
 import NotFoundPage from './components/notFoundPage.jsx'
 import { ProjectCard } from './components/ProjectCard.jsx'
 import miniProjectData from './mini_projects/miniProjectData.js'
+import ecosystemData from './react-ecosystem/ecosystemData.js'
+import ivQuestionData from './react-interview-questions/interviewProject.js'
+import { ProjectDetail } from './react-interview-questions/ProjectDetail.jsx'
 // import { MinProjectDetail } from './mini_projects/MinProjectDetail.jsx'
 
 const router = createBrowserRouter([
